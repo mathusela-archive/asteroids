@@ -5,7 +5,7 @@
 #include <gl/GL.h>
 
 #define STB_IMAGE_IMPLEMENTATION
-#include <stb/stb_image.h>
+#include <stb_image.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -23,6 +23,8 @@ const int WIDTH = 700;
 const int HEIGHT = 700;
 const char TITLE[] = "Asteroids";
 
+
+#define PROJECT_ROOT "../../"
 
 
 unsigned int create_vao(std::vector<float> verts, bool texCoords);
@@ -950,14 +952,14 @@ int main() {
 
 
 
-	postPass1ShaderProgram = create_shader("../resources/shaders/postProcessing/pass1/vertexShader.vert", "", "../resources/shaders/postProcessing/pass1/fragmentShader.frag", false);
-	postPass2ShaderProgram = create_shader("../resources/shaders/postProcessing/pass2/vertexShader.vert", "", "../resources/shaders/postProcessing/pass2/fragmentShader.frag", false); 
+	postPass1ShaderProgram = create_shader(PROJECT_ROOT "/resources/shaders/postProcessing/pass1/vertexShader.vert", "", PROJECT_ROOT "/resources/shaders/postProcessing/pass1/fragmentShader.frag", false);
+	postPass2ShaderProgram = create_shader(PROJECT_ROOT "/resources/shaders/postProcessing/pass2/vertexShader.vert", "", PROJECT_ROOT "/resources/shaders/postProcessing/pass2/fragmentShader.frag", false); 
 	ScreenQuad postPass1(postPass1ShaderProgram);
 	ScreenQuad postPass2(postPass2ShaderProgram);
 
-	asteroidShaderProgram = create_shader("../resources/shaders/asteroids/vertexShader.vert", "../resources/shaders/asteroids/geometryShader.geom", "../resources/shaders/asteroids/fragmentShader.frag", true);
-	playerShaderProgram = create_shader("../resources/shaders/player/vertexShader.vert", "", "../resources/shaders/player/fragmentShader.frag", false);
-	particleShaderProgram = create_shader("../resources/shaders/particles/vertexShader.vert", "", "../resources/shaders/particles/fragmentShader.frag", false);
+	asteroidShaderProgram = create_shader(PROJECT_ROOT "/resources/shaders/asteroids/vertexShader.vert", PROJECT_ROOT "/resources/shaders/asteroids/geometryShader.geom", PROJECT_ROOT "/resources/shaders/asteroids/fragmentShader.frag", true);
+	playerShaderProgram = create_shader(PROJECT_ROOT "/resources/shaders/player/vertexShader.vert", "", PROJECT_ROOT "/resources/shaders/player/fragmentShader.frag", false);
+	particleShaderProgram = create_shader(PROJECT_ROOT "/resources/shaders/particles/vertexShader.vert", "", PROJECT_ROOT "/resources/shaders/particles/fragmentShader.frag", false);
 
 
 
